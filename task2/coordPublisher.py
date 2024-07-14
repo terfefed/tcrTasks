@@ -6,7 +6,7 @@ from cv_bridge import CvBridge
 from std_msgs.msg import Float64MultiArray
 import cv2
 import numpy as np
-calibration_data = np.load(r'C:\Users\Girish\.vscode\programs\other stuff\calibration_data.npz')
+calibration_data = np.load(r'C:\Users\Allen\.vscode\tcr\task2\calibrationData.npz')
 mtx = calibration_data['mtx']
 dist = calibration_data['dist']
 class BallTrackerNode(Node):
@@ -20,7 +20,7 @@ class BallTrackerNode(Node):
         self.publisher_3d_coordinates = self.create_publisher(Float64MultiArray, 'ball_3d_coordinates', 10)
         self.cv_bridge = CvBridge()
         self.object_radius = 5  
-        self.lower = np.array([0, 100, 100])
+        self.lower = np.array([0, 100, 100]) 
         self.upper = np.array([10, 255, 255])
     def image_callback(self, msg):
         frame = self.cv_bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')

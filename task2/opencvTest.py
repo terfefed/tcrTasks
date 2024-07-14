@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-calibration_data = np.load(r'C:\Users\Girish\.vscode\programs\other stuff\calibration_data.npz')
+calibration_data = np.load(r'C:\Users\Allen\.vscode\tcr\task2\calibrationData.npz')
 mtx = calibration_data['mtx']
 dist = calibration_data['dist']
 object_radius = 5 
